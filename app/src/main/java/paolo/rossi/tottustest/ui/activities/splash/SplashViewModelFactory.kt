@@ -11,6 +11,6 @@ class SplashViewModelFactory(private val application: Application) : ViewModelPr
         if (modelClass.isAssignableFrom(SplashViewModel::class.java)) {
             return SplashViewModel(application) as T
         }
-        throw IllegalArgumentException("Class different from ChoosePollObjectiveViewModelFactory")
+        throw IllegalArgumentException("Class different from SplashViewModelFactory")
     }
 }

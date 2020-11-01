@@ -1,9 +1,13 @@
 package paolo.rossi.tottustest.data.models
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
+
+@Parcelize
 @Entity(tableName = "user")
 data class User(
     @PrimaryKey(autoGenerate = true) val id: Long = 0L,
@@ -13,5 +17,5 @@ data class User(
     @ColumnInfo(name = "password") val password: String,
     @ColumnInfo(name = "is_logged") val is_logged: Boolean,
     @ColumnInfo(name = "status") val status: Int,
-    @ColumnInfo(name = "created_at") val created_at: String
-)
+    @ColumnInfo(name = "created_at") val created_at: Long
+) : Parcelable

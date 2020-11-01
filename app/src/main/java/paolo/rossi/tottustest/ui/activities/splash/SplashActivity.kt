@@ -38,16 +38,13 @@ class SplashActivity : AppCompatActivity() {
     private fun sendToCorrectNavigation() {
         Snackbar.make(findViewById(android.R.id.content), "Inicializando ...", Snackbar.LENGTH_LONG).setAction("Ok", null).show()
         Handler().postDelayed({
-            // Obtain from DAO the current user
-
             view_model = ViewModelProvider(this, SplashViewModelFactory(application)).get(SplashViewModel::class.java)
-
 
             if(view_model.isLoggedIn()) {
                 startActivity(MainIntent())
             } else {
                 startActivity(LoginIntent())
             }
-        }, 5000)
+        }, 4000)
     }
 }

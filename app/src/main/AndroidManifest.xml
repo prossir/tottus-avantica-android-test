@@ -17,11 +17,10 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ui.activities.MainActivity"
-            android:label="@string/app_name" android:theme="@style/Theme.TottusTest.NoActionBar"/>
-
         <activity android:name=".ui.activities.login.LoginActivity" android:theme="@style/Theme.TottusTest.NoActionBar"/>
+        <activity android:name=".ui.activities.MainActivity" android:theme="@style/Theme.TottusTest.NoActionBar"/>
+        <activity android:name=".ui.activities.account_creation.AccountCreationActivity"/>
+
     </application>
 
 </manifest>

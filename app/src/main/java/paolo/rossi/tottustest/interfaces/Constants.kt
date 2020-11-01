@@ -1,8 +1,8 @@
 package paolo.rossi.tottustest.interfaces
 
 object Constants {
-    const val REQUEST_CODE_ = 100
-    const val REQUEST_CODE_CAMERA_PERMISSION = 117
-    const val REQUEST_CODE_TAKE_OPTIONAL_PHOTO_INTENT_IDENTIFIER = 118
+    const val REQUEST_CODE_ACCOUNT_CREATION = 117
+
+    const val INTENT_NEW_USER = "INTENT_NEW_USER"
 
 }
