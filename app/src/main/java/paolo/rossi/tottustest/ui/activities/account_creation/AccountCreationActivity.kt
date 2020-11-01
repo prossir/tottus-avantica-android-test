@@ -38,8 +38,7 @@ class AccountCreationActivity : AppCompatActivity() {
     private fun setElements() {
         self = this
         binding = DataBindingUtil.setContentView(this, R.layout.activity_account_creation)
-        view_model = ViewModelProvider(this, AccountCreationViewModelFactory(application)).get(
-            AccountCreationViewModel::class.java)
+        view_model = ViewModelProvider(this).get(AccountCreationViewModel::class.java)
     }
 
 

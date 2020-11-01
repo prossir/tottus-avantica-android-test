@@ -9,11 +9,7 @@ import paolo.rossi.tottustest.data.repositories.UserRepository
 class LoginViewModel(application: Application)
     : AndroidViewModel(application) {
 
-    var user_repository: UserRepository
-
-    init {
-        user_repository = UserRepository(application)
-    }
+    private var user_repository: UserRepository = UserRepository(application)
 
 
     fun tryLogin(email: String, password: String) : User? {

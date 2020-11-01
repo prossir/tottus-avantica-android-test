@@ -22,4 +22,6 @@
     <style name="Theme.TottusTest.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.TottusTest.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert" />
 </resources>

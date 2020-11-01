@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import paolo.rossi.tottustest.R
-import paolo.rossi.tottustest.ui.activities.MainIntent
+import paolo.rossi.tottustest.ui.activities.main.MainIntent
 import paolo.rossi.tottustest.ui.activities.login.LoginIntent
 
 
@@ -38,13 +38,12 @@ class SplashActivity : AppCompatActivity() {
     private fun sendToCorrectNavigation() {
         Snackbar.make(findViewById(android.R.id.content), "Inicializando ...", Snackbar.LENGTH_LONG).setAction("Ok", null).show()
         Handler().postDelayed({
-            view_model = ViewModelProvider(this, SplashViewModelFactory(application)).get(SplashViewModel::class.java)
-
+            view_model = ViewModelProvider(this).get(SplashViewModel::class.java)
             if(view_model.isLoggedIn()) {
                 startActivity(MainIntent())
             } else {
                 startActivity(LoginIntent())
             }
-        }, 4000)
+        }, 3000)
     }
 }

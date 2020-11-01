@@ -1,4 +1,4 @@
-package paolo.rossi.tottustest.ui.activities.teams
+package paolo.rossi.tottustest.ui.activities.main.teams
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

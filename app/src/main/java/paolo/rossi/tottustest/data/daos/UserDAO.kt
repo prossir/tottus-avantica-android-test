@@ -1,6 +1,5 @@
 package paolo.rossi.tottustest.data.daos
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import paolo.rossi.tottustest.data.models.User
 
@@ -20,11 +19,16 @@ interface UserDAO {
     fun setLoggedIn(logging_status: Int, user_id: Long)
 
 
+    @Query("UPDATE user SET is_logged = 0 WHERE is_logged = 1")
+    fun logout()
+
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(user: User) : Long
 
 
     @Delete
     fun delete(user: User)
+
 
 }

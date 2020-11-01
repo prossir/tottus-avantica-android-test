@@ -13,7 +13,7 @@ import paolo.rossi.tottustest.R
 import paolo.rossi.tottustest.data.models.User
 import paolo.rossi.tottustest.databinding.ActivityLoginBinding
 import paolo.rossi.tottustest.interfaces.Constants
-import paolo.rossi.tottustest.ui.activities.MainIntent
+import paolo.rossi.tottustest.ui.activities.main.MainIntent
 import paolo.rossi.tottustest.ui.activities.account_creation.AccountCreationIntent
 
 
@@ -41,8 +41,7 @@ class LoginActivity : AppCompatActivity() {
     private fun setElements() {
         self = this
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        view_model = ViewModelProvider(this, LoginViewModelFactory(application)).get(
-            LoginViewModel::class.java)
+        view_model = ViewModelProvider(this).get(LoginViewModel::class.java)
     }
 
 
