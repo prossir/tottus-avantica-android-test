@@ -11,8 +11,11 @@ interface MemberDAO {
     fun retrieveDetailedActive() : List<Member>
 
 
+    @Query("SELECT count(id) FROM member WHERE team_id = :team_id")
+    fun countMembers(team_id: Long) : Int
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(member: Member)
+    fun insert(member: Member) : Long
 
 
     @Delete

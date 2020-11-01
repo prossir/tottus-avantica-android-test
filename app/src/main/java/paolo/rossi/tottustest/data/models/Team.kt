@@ -3,6 +3,7 @@ package paolo.rossi.tottustest.data.models
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
@@ -16,4 +17,6 @@ data class Team(
     @ColumnInfo(name = "status") val status: Int,
     @ColumnInfo(name = "created_at") val created_at: Long,
     @ColumnInfo(name = "user_id") val user_id: Long
-) : Parcelable
+) : Parcelable {
+    @Ignore var members_count : Int = 0
+}

@@ -12,11 +12,16 @@ interface TeamDAO {
     fun retrieveDetailedActive() : LiveData<List<Team>>
 
 
+    @Query("SELECT * FROM team WHERE user_id = :user_id")
+    fun retrieveByUserId(user_id: Long): LiveData<List<Team>>
+
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(team: Team)
+    fun insert(team: Team) : Long
 
 
     @Delete
     fun delete(team: Team)
+
 
 }

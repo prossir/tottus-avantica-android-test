@@ -95,7 +95,7 @@ class AccountCreationActivity : AppCompatActivity() {
             setResult(Activity.RESULT_OK, intent)
             finish()
         } else {
-            Snackbar.make(findViewById(android.R.id.content), "Hubo un error al crear el usuario. No se pudo crear", Snackbar.LENGTH_INDEFINITE).setAction("Ok", null).show()
+            Snackbar.make(findViewById(android.R.id.content), "Hubo un error al crear el usuario. No se pudo crear", Snackbar.LENGTH_LONG).setAction("Ok", null).show()
         }
     }
 }

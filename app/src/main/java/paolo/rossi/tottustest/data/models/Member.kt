@@ -14,5 +14,6 @@ data class Member(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "email") val email: String,
     @ColumnInfo(name = "status") val status: Int,
-    @ColumnInfo(name = "created_at") val created_at: Long
+    @ColumnInfo(name = "created_at") val created_at: Long,
+    @ColumnInfo(name = "team_id") val team_id: Long,
 ) : Parcelable

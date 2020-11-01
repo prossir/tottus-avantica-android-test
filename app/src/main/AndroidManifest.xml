@@ -3,7 +3,7 @@
     package="paolo.rossi.tottustest">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -20,7 +20,7 @@
         <activity android:name=".ui.activities.login.LoginActivity" android:theme="@style/Theme.TottusTest.NoActionBar"/>
         <activity android:name=".ui.activities.main.MainActivity" android:theme="@style/Theme.TottusTest.NoActionBar"/>
         <activity android:name=".ui.activities.account_creation.AccountCreationActivity"/>
-
+        <activity android:name=".ui.activities.main.teams.team_detail.TeamDetailActivity"/>
     </application>
 
 </manifest>

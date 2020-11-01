@@ -14,6 +14,8 @@ android {
         viewBinding = true
     }
 
+    android.defaultConfig.vectorDrawables.useSupportLibrary = true
+
     defaultConfig {
         applicationId "paolo.rossi.tottustest"
         minSdkVersion 19

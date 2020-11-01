@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
             binding.etPassword.requestFocus()
             return
         } else if (binding.etPassword.text.toString().isBlank()) {
-            Snackbar.make(findViewById(android.R.id.content), "La contraseña no puede estar vacía", Snackbar.LENGTH_LONG).show()
+            Snackbar.make(findViewById(android.R.id.content), "La contraseña no puede estar vacía", Snackbar.LENGTH_SHORT).show()
             binding.etPassword.requestFocus()
             return
         }
@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
         if (user != null) {
             startActivity(MainIntent())
         } else {
-            Snackbar.make(findViewById(android.R.id.content), "Las credenciales no coinciden", Snackbar.LENGTH_INDEFINITE).setAction("OK", null).show()
+            Snackbar.make(findViewById(android.R.id.content), "Las credenciales no coinciden", Snackbar.LENGTH_LONG).setAction("OK", null).show()
         }
     }
 
