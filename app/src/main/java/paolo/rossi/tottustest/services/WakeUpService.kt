@@ -87,7 +87,7 @@ class WakeUpService : Service() {
                         startActivity(main_intent)
                     }
                 }
-                delay(1 * 20 * 1000)
+                delay(1 * 30 * 1000)
             }
         }
     }
