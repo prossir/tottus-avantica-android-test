@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
@@ -37,6 +36,13 @@ class TeamsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        if(binding.rvTeams.adapter != null) {
+            view_model.refreshTeamMembers()
+            (binding.rvTeams.adapter as TeamsAdapter).reload(view_model.teams.value)
+        }
+    }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -46,7 +52,7 @@ class TeamsFragment : Fragment() {
 
     fun setElements() {
         view_model = ViewModelProvider(this).get(TeamsViewModel::class.java)
-        view_model.teams.observe(viewLifecycleOwner, Observer { teams->
+        view_model.teams.observe(viewLifecycleOwner, { teams->
             for(team in teams) {
                 team.members_count = view_model.countTeamMembers(team.id)
             }
@@ -54,10 +60,10 @@ class TeamsFragment : Fragment() {
             if (binding.rvTeams.adapter == null) {
                 binding.rvTeams.layoutManager = LinearLayoutManager(requireContext())
                 binding.rvTeams.adapter = TeamsAdapter(teams,
-                    on_item_clicked_function =  {
-                        startActivity(requireContext().TeamDetailIntent())
+                    on_item_clicked_function =  { position ->
+                        startActivity(requireContext().TeamDetailIntent(teams[position]))
                     }, on_add_member_click_listener = { position ->
-                        val create_member_dialog = AddMemberBottomDialog(requireContext(),
+                        val create_member_dialog = AddMemberBottomDialog(false, requireContext(),
                             teams[position].name,
                             on_member_creation_clicked = { name, email ->
                                 if (view_model.createTeamMember(position, name, email) >= 1) {
@@ -116,4 +122,5 @@ class TeamsFragment : Fragment() {
             }
         }
     }
+
 }

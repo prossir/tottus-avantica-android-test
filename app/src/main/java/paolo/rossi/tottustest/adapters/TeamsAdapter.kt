@@ -50,8 +50,11 @@ class TeamsAdapter(private var teams: List<Team>,
 
 
     fun reload(teams: List<Team>?) {
-        this.teams = teams!!
-        notifyDataSetChanged()
+        if (teams != null) {
+            this.teams = teams!!
+            notifyDataSetChanged()
+        }
+
     }
 
     fun reloadMembers(team_position: Int) {

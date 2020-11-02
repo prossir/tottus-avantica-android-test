@@ -10,7 +10,7 @@ import com.google.android.material.snackbar.Snackbar
 import paolo.rossi.tottustest.R
 
 
-open class AddMemberBottomDialog(context: Context, private val team_name: String,  private val on_member_creation_clicked: (String, String) -> (Unit)) : BottomSheetDialog(context) {
+open class AddMemberBottomDialog(val hideable: Boolean = false, context: Context, private val team_name: String,  private val on_member_creation_clicked: (String, String) -> (Unit)) : BottomSheetDialog(context) {
 
     private var tv_team_name : TextView? = null
     private lateinit var et_name : EditText
@@ -72,7 +72,7 @@ open class AddMemberBottomDialog(context: Context, private val team_name: String
             }
 
             on_member_creation_clicked.invoke(et_name.text.toString(), et_email.text.toString())
-            this.dismiss()
+            if (hideable) this.hide() else this.dismiss()
         }
     }
 

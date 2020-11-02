@@ -25,4 +25,23 @@ class MemberRepository(context: Context) {
     fun countOfTeam(team_id: Long): Int {
         return memberDAO.countMembers(team_id)
     }
+
+
+
+    fun retrieveByTeamId(team_id: Long): List<Member> {
+        return memberDAO.retrieveByTeamId(team_id)
+    }
+
+    fun delete(member_id: Long) {
+        val member = memberDAO.retrieveById(member_id)
+        if (member != null) {
+            memberDAO.delete(member)
+        }
+    }
+
+
+    fun sofDelete(member_id: Long) {
+        memberDAO.softDelete(member_id)
+    }
+
 }

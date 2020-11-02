@@ -34,4 +34,12 @@ class TeamsViewModel(application: Application) : AndroidViewModel(application) {
         return member_repository.countOfTeam(team_id)
     }
 
+
+    fun refreshTeamMembers() {
+        if(teams.value != null) {
+            for(team in teams.value!!) {
+                team.members_count = member_repository.countOfTeam(team.id)
+            }
+        }
+    }
 }
