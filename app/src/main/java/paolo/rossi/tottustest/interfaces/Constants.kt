@@ -1,6 +1,8 @@
 package paolo.rossi.tottustest.interfaces
 
 object Constants {
+    const val TAG = "DEBUG TOTTUS TEST"
+
     const val INTENT_TEAM_URL = "INTENT_TEAM_URL"
 
 

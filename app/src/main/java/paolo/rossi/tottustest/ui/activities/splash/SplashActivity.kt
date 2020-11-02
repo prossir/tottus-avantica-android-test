@@ -2,12 +2,14 @@ package paolo.rossi.tottustest.ui.activities.splash
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import paolo.rossi.tottustest.R
+import paolo.rossi.tottustest.services.WakeUpService
 import paolo.rossi.tottustest.ui.activities.main.MainIntent
 import paolo.rossi.tottustest.ui.activities.login.LoginIntent
 
@@ -26,6 +28,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         sendToCorrectNavigation()
+        startService()
     }
 
 
@@ -46,4 +49,17 @@ class SplashActivity : AppCompatActivity() {
             }
         }, 3000)
     }
+
+
+    private fun startService() {
+        Intent(this, WakeUpService::class.java).also {
+            it.action = "START"
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(it)
+                return
+            }
+            startService(it)
+        }
+    }
+
 }
