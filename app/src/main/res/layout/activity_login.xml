@@ -14,10 +14,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="12dp"
+            app:boxBackgroundColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/tl_password"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
+            app:layout_constraintRight_toRightOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email"
@@ -35,11 +37,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="12dp"
+            app:boxBackgroundColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password"
@@ -60,8 +64,10 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
+            android:background="@drawable/background_rounded_primary"
             android:onClick="tryToLogin"
             android:text="Ingresar"
+            android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -73,8 +79,10 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
+            android:background="@drawable/background_rounded_primary"
             android:onClick="goToAccountCreation"
             android:text="Crear cuenta"
+            android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/b_login" />
@@ -84,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.52" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -22,7 +22,6 @@ class WakeUpService : Service() {
 
     private var wake_lock: PowerManager.WakeLock? = null
     private var is_service_started = false
-    private var get_from_background = false
 
 
     override fun onBind(intent: Intent): IBinder? {
@@ -54,7 +53,7 @@ class WakeUpService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        var notification = createNotification()
+        val notification = createNotification()
         startForeground(1, notification)
     }
 
@@ -74,7 +73,7 @@ class WakeUpService : Service() {
         wake_lock =
             (getSystemService(Context.POWER_SERVICE) as PowerManager).run {
                 newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "WakeUpService::lock").apply {
-                    acquire()
+                    acquire(10*60*1000L /*10 minutes*/)
                 }
             }
 
@@ -82,7 +81,7 @@ class WakeUpService : Service() {
         GlobalScope.launch {
             while (is_service_started) {
                 launch(Dispatchers.IO) {
-                    if(!appInForeground(this@WakeUpService)) {
+                    if(!isAppInForeground(this@WakeUpService)) {
                         val main_intent = Intent(this@WakeUpService, MainActivity::class.java)
                         main_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(main_intent)
@@ -153,7 +152,7 @@ class WakeUpService : Service() {
     }
 
 
-    private fun appInForeground(context: Context): Boolean {
+    private fun isAppInForeground(context: Context): Boolean {
         val activity_manager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         val running_app_processes = activity_manager.runningAppProcesses ?: return false
         return running_app_processes.any { it.processName == context.packageName && it.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND }

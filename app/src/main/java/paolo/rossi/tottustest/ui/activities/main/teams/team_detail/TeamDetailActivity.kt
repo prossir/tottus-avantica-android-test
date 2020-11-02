@@ -56,6 +56,7 @@ class TeamDetailActivity : AppCompatActivity() {
             team!!
         )).get(TeamDetailViewModel::class.java)
 
+        binding.tvTitle.setText("Equipo: ${team.name}")
         binding.rvMembers.layoutManager = LinearLayoutManager(this)
 
         view_model.members.observe(this, { members ->
@@ -119,6 +120,11 @@ class TeamDetailActivity : AppCompatActivity() {
                 create_member_dialog?.show()
             }
         }
+    }
+
+
+    fun toPrevious(view: View) {
+        finish()
     }
 
 }

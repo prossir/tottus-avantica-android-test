@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tottus - Paolo</string>
+    <string name="app_name">Avantica - Paolo</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -10,4 +10,13 @@
     <string name="menu_home">Home</string>
     <string name="menu_teams">Equipos</string>
     <string name="menu_out">Salir</string>
+    <string name="s_splash_welcome">Bienvenidos tu eres, a esta pequeña demostración, de las caídas aprender debemos</string>
+    <string name="s_splash_tottus_logo">tottus logo</string>
+    <string name="s_account_creation_password_hint">Contraseña</string>
+    <string name="s_account_creation_email_hint">Email</string>
+    <string name="s_create_account_title_button">Crear cuenta</string>
+    <string name="s_content_description_back">Hacia atras</string>
+    <string name="s_create_account_title">Creación de cuenta</string>
+    <string name="s_create_account_name_hint">Nombre</string>
+    <string name="s_create_account_last_name_hint">Apellido</string>
 </resources>

@@ -61,6 +61,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_weight="0.5"
+                    android:background="@drawable/background_rounded_primary"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     tools:text="Ok" />
 

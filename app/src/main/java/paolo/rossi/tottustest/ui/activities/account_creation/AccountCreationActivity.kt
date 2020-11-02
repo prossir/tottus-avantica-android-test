@@ -98,4 +98,9 @@ class AccountCreationActivity : AppCompatActivity() {
             Snackbar.make(findViewById(android.R.id.content), "Hubo un error al crear el usuario. No se pudo crear", Snackbar.LENGTH_LONG).setAction("Ok", null).show()
         }
     }
+
+
+    fun toPrevious(view: View) {
+        finish()
+    }
 }
